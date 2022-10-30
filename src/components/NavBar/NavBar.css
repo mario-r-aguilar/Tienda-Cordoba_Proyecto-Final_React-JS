@@ -1,0 +1,30 @@
+.navbar-container {
+	display: flex;
+	justify-content: space-between;
+	background-color: rgb(70, 96, 168);
+	box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+	height: 90px;
+}
+
+.navbar-titulo {
+	margin-left: 10px;
+	color: blanchedalmond;
+	font-size: 35px;
+}
+
+.navbar-list {
+	list-style: none;
+	display: flex;
+	flex-direction: row;
+	margin-right: 300px;
+}
+
+.navbar-item-link {
+	display: flex;
+	justify-content: space-between;
+	margin-left: 30px;
+	text-decoration: none;
+	color: blanchedalmond;
+	margin-top: 20px;
+	font-size: 20px;
+}
