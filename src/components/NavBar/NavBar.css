@@ -1,30 +1,32 @@
 .navbar-container {
 	display: flex;
-	justify-content: space-between;
-	background-color: rgb(70, 96, 168);
-	box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
-	height: 90px;
+	justify-content: space-evenly;
+	background-color: rgb(47, 84, 187);
+	height: 5rem;
+	border-bottom: 2px solid rgb(5, 16, 48);
 }
 
 .navbar-titulo {
-	margin-left: 10px;
-	color: blanchedalmond;
-	font-size: 35px;
+	margin-left: 1rem;
+	padding-bottom: 2rem;
+	color: rgb(241, 237, 231);
+	font-size: 2rem;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .navbar-list {
 	list-style: none;
 	display: flex;
 	flex-direction: row;
-	margin-right: 300px;
+	margin-right: 19rem;
+	margin-bottom: 2rem;
 }
 
 .navbar-item-link {
 	display: flex;
 	justify-content: space-between;
-	margin-left: 30px;
+	margin: 1rem;
 	text-decoration: none;
-	color: blanchedalmond;
-	margin-top: 20px;
-	font-size: 20px;
+	font-size: 1.2rem;
+	color: rgb(241, 237, 231);
 }
