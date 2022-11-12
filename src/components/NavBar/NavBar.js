@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import CartWidget from '../CartWidget/CartWidget';
 import './NavBar.css';
 
