@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { data } from '../../data/data';
 import './ItemListContainer.css';
 
-const ItemListContainer = (props) => {
+const ItemListContainer = ({ greeting }) => {
 	const [productList, setProductList] = useState([]);
 	const getProducts = new Promise((resolve, reject) => {
 		setTimeout(() => {
@@ -21,7 +21,7 @@ const ItemListContainer = (props) => {
 	return (
 		<div className="containerMsgAndCards">
 			<div className="greeting-container">
-				<h2 className="greeting-message">{props.greeting}</h2>
+				<h2 className="greeting-message">{greeting}</h2>
 			</div>
 			<ItemList productList={productList} />
 		</div>

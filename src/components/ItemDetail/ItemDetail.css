@@ -1,0 +1,30 @@
+.productDetailContainer {
+	display: flex;
+	justify-content: space-evenly;
+}
+.productDetail {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	font-size: large;
+	margin-top: 2rem;
+}
+.cardBottom {
+	border-radius: 8px;
+	margin-top: 1rem;
+	font-size: small;
+	padding: 0.5rem;
+	background-color: rgb(194, 222, 255);
+}
+.textCard {
+	display: inline;
+}
+.priceCard {
+	color: rgb(7, 71, 155);
+}
+.countProductCenter {
+	margin: 12rem;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+}

@@ -20,10 +20,10 @@ const Item = ({ product }) => {
 				<h5 className="textCard">Precio: </h5>
 				<span className="textCardH"> ${product.price}</span>
 			</div>
-			<div>
+			{/* <div>
 				<h5 className="textCard">Descripción: </h5>
 				<span className="textCardH"> {product.description} </span>
-			</div>
+			</div> */}
 			<div>
 				<h5 className="textCard">Id: </h5>
 				<span className="textCardH"> {product.id} </span>
