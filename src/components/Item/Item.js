@@ -12,21 +12,14 @@ const Item = ({ product }) => {
 				src={`images/${product.pictureUrl}.png`}
 			/>
 			<div>
-				<h5 className="textCard">Nombre: </h5>
-				<span className="textCardH"> {product.title}</span>
+				<h3 className="textCard">{product.title}</h3>
 			</div>
 
 			<div>
-				<h5 className="textCard">Precio: </h5>
-				<span className="textCardH"> ${product.price}</span>
+				<h3 className="textCard priceCard">${product.price}</h3>
 			</div>
-			{/* <div>
-				<h5 className="textCard">Descripción: </h5>
-				<span className="textCardH"> {product.description} </span>
-			</div> */}
 			<div>
-				<h5 className="textCard">Id: </h5>
-				<span className="textCardH"> {product.id} </span>
+				<h5 className="textCard">Id: {product.id}</h5>
 			</div>
 			<button className="cardButton">Ver detalle del producto</button>
 			<div className="cardBottom">

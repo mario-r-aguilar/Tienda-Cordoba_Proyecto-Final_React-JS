@@ -33,6 +33,9 @@ const ItemDetail = ({ product }) => {
 					<div className="cardBottom">
 						<span>{product.stock} Unidades Disponibles</span>
 					</div>
+					<div>
+						<button className="buttonBack">Volver</button>
+					</div>
 				</div>
 			</div>
 		</div>
