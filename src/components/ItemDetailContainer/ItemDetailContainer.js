@@ -13,7 +13,7 @@ const ItemDetailContainer = () => {
 
 	useEffect(() => {
 		getProduct.then((response) => {
-			setProductSelec(response[0]);
+			setProductSelec(response[1]);
 		});
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
