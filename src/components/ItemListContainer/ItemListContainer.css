@@ -1,3 +1,8 @@
+.containerMsgAndCards {
+	display: flex;
+	flex-direction: column;
+}
+
 .greeting-container {
 	display: flex;
 	justify-content: center;

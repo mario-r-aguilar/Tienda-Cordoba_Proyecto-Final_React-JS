@@ -1,0 +1,41 @@
+.card {
+	border: 1px solid rgb(169, 208, 252);
+	background-color: rgb(169, 208, 252);
+	border-radius: 8px;
+	padding: 1rem;
+	width: 11rem;
+	margin-top: 1rem;
+}
+.cardTop,
+.cardBottom {
+	margin-bottom: 1rem;
+	padding: 0.5rem;
+	background-color: rgb(194, 222, 255);
+	font-weight: 500;
+}
+
+.cardBottom {
+	margin-bottom: 0;
+	margin-top: 1rem;
+	font-size: small;
+}
+
+.imgCard {
+	display: block;
+	width: 11rem;
+	height: 11rem;
+	border-radius: 8px;
+	text-align: center;
+	margin-bottom: 1rem;
+}
+.textCard {
+	display: inline;
+}
+
+.cardButton {
+	border-radius: 8px;
+	border: 1px solid rgb(23, 146, 187);
+	background-color: rgb(120, 245, 203);
+	margin-top: 1rem;
+	padding: 0.5rem;
+}
