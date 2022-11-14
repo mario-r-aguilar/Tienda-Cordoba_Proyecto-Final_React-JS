@@ -9,14 +9,10 @@ const ItemDetailContainer = () => {
 	const { id } = useParams();
 	const getProduct = new Promise((resolve, reject) => {
 		setTimeout(() => {
-			if (id) {
-				const filterProduct = data.filter((item) => {
-					return item.id === parseInt(id);
-				});
-				resolve(filterProduct);
-			} else {
-				resolve(data);
-			}
+			const filterProduct = data.find((item) => {
+				return item.id === parseInt(id);
+			});
+			resolve(filterProduct);
 		}, 2000);
 	});
 
