@@ -1,13 +1,22 @@
-import ItemList from '../ItemList/ItemList';
 import { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import ItemList from '../ItemList/ItemList';
 import { data } from '../../data/data';
 import './ItemListContainer.css';
 
 const ItemListContainer = ({ greeting }) => {
 	const [productList, setProductList] = useState([]);
+	const { categoryId } = useParams();
 	const getProducts = new Promise((resolve, reject) => {
 		setTimeout(() => {
-			resolve(data);
+			if (categoryId) {
+				const filterCategory = data.filter((item) => {
+					return item.category === categoryId;
+				});
+				resolve(filterCategory);
+			} else {
+				resolve(data);
+			}
 		}, 2000);
 	});
 
@@ -16,7 +25,7 @@ const ItemListContainer = ({ greeting }) => {
 			setProductList(response);
 		});
 		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [productList]);
+	}, [categoryId]);
 
 	return (
 		<div className="containerMsgAndCards">

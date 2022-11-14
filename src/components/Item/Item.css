@@ -34,6 +34,13 @@
 }
 
 .cardButton {
+	/* Estilos provisorios */
+	display: block;
+	text-decoration: none;
+	text-align: center;
+	font-weight: 400;
+	color: black;
+	/* Fin de estilos provisorios */
 	border-radius: 8px;
 	border: 1px solid rgb(23, 146, 187);
 	background-color: rgb(120, 245, 203);

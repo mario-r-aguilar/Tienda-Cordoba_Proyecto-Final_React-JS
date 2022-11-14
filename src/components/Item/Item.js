@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom';
 import './Item.css';
 const Item = ({ product }) => {
 	return (
@@ -21,7 +22,9 @@ const Item = ({ product }) => {
 			<div>
 				<h5 className="textCard">Id: {product.id}</h5>
 			</div>
-			<button className="cardButton">Ver detalle del producto</button>
+			<NavLink to={`/item/${product.id}`} className="cardButton">
+				Ver detalle
+			</NavLink>
 			<div className="cardBottom">
 				<span>Stock: {product.stock}</span>
 			</div>

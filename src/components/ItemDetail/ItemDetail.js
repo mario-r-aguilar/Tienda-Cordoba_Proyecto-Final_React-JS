@@ -2,6 +2,7 @@ import ItemCount from '../ItemCount/ItemCount';
 import './ItemDetail.css';
 
 const ItemDetail = ({ product }) => {
+	//Función Add Cart
 	const onAdd = (cantidad) => {
 		console.log(cantidad);
 	};
@@ -11,7 +12,7 @@ const ItemDetail = ({ product }) => {
 				<img
 					className="imgCard"
 					alt={product.title}
-					src={`images/${product.pictureUrl}.png`}
+					src={`item/images/${product.pictureUrl}.png`}
 				/>
 				<div>
 					<h1 className="textCard">{product.title}</h1>

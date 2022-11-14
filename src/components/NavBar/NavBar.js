@@ -1,4 +1,5 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
+import { NavLink } from 'react-router-dom';
 import CartWidget from '../CartWidget/CartWidget';
 import './NavBar.css';
 
@@ -8,24 +9,24 @@ export const NavBar = () => {
 			<h1 className="navbar-titulo">Tienda Córdoba</h1>
 			<ul className="navbar-list">
 				<li className="navbar-item">
-					<a href="#" className="navbar-item-link">
-						Nuestros Productos
-					</a>
+					<NavLink to="/" className="navbar-item-link">
+						Inicio
+					</NavLink>
 				</li>
 				<li className="navbar-item">
-					<a href="#" className="navbar-item-link">
+					<NavLink to="category/cochecitos" className="navbar-item-link">
 						Cochecitos
-					</a>
+					</NavLink>
 				</li>
 				<li className="navbar-item">
-					<a href="#" className="navbar-item-link">
+					<NavLink to="category/cunas" className="navbar-item-link">
 						Cunas
-					</a>
+					</NavLink>
 				</li>
 				<li className="navbar-item">
-					<a href="#" className="navbar-item-link">
+					<NavLink to="category/sillas" className="navbar-item-link">
 						Sillas
-					</a>
+					</NavLink>
 				</li>
 			</ul>
 			<CartWidget />

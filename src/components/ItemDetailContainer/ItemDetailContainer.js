@@ -1,22 +1,31 @@
 import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 import { data } from '../../data/data';
 import ItemDetail from '../ItemDetail/ItemDetail';
 import './ItemDetailContainer.css';
 
 const ItemDetailContainer = () => {
 	const [productSelec, setProductSelec] = useState();
+	const { id } = useParams();
 	const getProduct = new Promise((resolve, reject) => {
 		setTimeout(() => {
-			resolve(data);
+			if (id) {
+				const filterProduct = data.filter((item) => {
+					return item.id === parseInt(id);
+				});
+				resolve(filterProduct);
+			} else {
+				resolve(data);
+			}
 		}, 2000);
 	});
 
 	useEffect(() => {
 		getProduct.then((response) => {
-			setProductSelec(response[1]);
+			setProductSelec(response);
 		});
 		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, []);
+	}, [id]);
 
 	return <div>{productSelec && <ItemDetail product={productSelec} />}</div>;
 };
