@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import ItemCount from '../ItemCount/ItemCount';
 import './ItemDetail.css';
 
@@ -35,7 +36,9 @@ const ItemDetail = ({ product }) => {
 						<span>{product.stock} Unidades Disponibles</span>
 					</div>
 					<div>
-						<button className="buttonBack">Volver</button>
+						<Link to="/" className="buttonBack">
+							Volver al Inicio
+						</Link>
 					</div>
 				</div>
 			</div>
