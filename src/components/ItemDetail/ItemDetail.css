@@ -7,13 +7,14 @@
 	flex-direction: column;
 	align-items: center;
 	font-size: large;
-	margin-top: 2rem;
+	margin-top: 8rem;
 }
-.cardBottom {
+.unitsAvailable {
 	margin-top: 1rem;
+	margin-left: 12.5rem;
 	font-size: small;
 	padding: 0.5rem;
-	background-color: rgb(194, 222, 255);
+	background-color: rgb(220, 237, 255);
 	border-radius: 0;
 }
 .textCard {
@@ -30,14 +31,22 @@
 }
 
 .buttonBack {
-	/* Estilos provisorios */
-	display: block;
-	text-decoration: none;
-	color: black;
-	/* Fin de estilos provisorios */
 	margin-top: 1rem;
 	padding: 0.5rem 1rem;
+	color: black;
 	border: 1px solid rgb(190, 190, 190);
 	border-radius: 8px;
 	background-color: rgb(190, 190, 190);
+	box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.404);
+}
+.buttonFinish {
+	margin-top: 1rem;
+	padding: 0.5rem 1rem;
+	font-size: 18px;
+	color: rgba(255, 255, 255, 0.836);
+	font-weight: 500;
+	border: 1px solid rgb(18, 89, 223);
+	border-radius: 8px;
+	background-color: rgb(18, 89, 223);
+	box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.74);
 }

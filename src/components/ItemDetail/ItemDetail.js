@@ -5,11 +5,12 @@ import './ItemDetail.css';
 
 const ItemDetail = ({ product }) => {
 	//Función Add Cart
-	// eslint-disable-next-line no-unused-vars
 	const [cantidad, setCantidad] = useState(0);
-	const onAdd = (cantidad) => {
-		console.log(cantidad);
+	const onAdd = (count) => {
+		setCantidad(count);
 	};
+	console.log(cantidad);
+
 	return (
 		<div className="productDetailContainer">
 			<div className="productDetail">
@@ -33,18 +34,19 @@ const ItemDetail = ({ product }) => {
 			<div className="countProduct">
 				<div className="countProductCenter">
 					<div>
-						<ItemCount
-							stock={product.stock}
-							initial={1}
-							onAdd={onAdd(setCantidad)}
-						/>
+						<ItemCount stock={product.stock} initial={1} onAdd={onAdd} />
 					</div>
-					<div className="cardBottom">
+					<div className="unitsAvailable">
 						<span>{product.stock} Unidades Disponibles</span>
 					</div>
 					<div>
-						<Link to="/" className="buttonBack">
-							Volver al Inicio
+						<Link to="/cart">
+							<button className="buttonFinish">Terminar compra</button>
+						</Link>
+					</div>
+					<div>
+						<Link to="/">
+							<button className="buttonBack">Volver al Inicio</button>
 						</Link>
 					</div>
 				</div>
