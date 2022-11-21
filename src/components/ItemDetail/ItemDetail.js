@@ -1,9 +1,12 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import ItemCount from '../ItemCount/ItemCount';
 import './ItemDetail.css';
 
 const ItemDetail = ({ product }) => {
 	//Función Add Cart
+	// eslint-disable-next-line no-unused-vars
+	const [cantidad, setCantidad] = useState(0);
 	const onAdd = (cantidad) => {
 		console.log(cantidad);
 	};
@@ -30,7 +33,11 @@ const ItemDetail = ({ product }) => {
 			<div className="countProduct">
 				<div className="countProductCenter">
 					<div>
-						<ItemCount stock={product.stock} initial={1} onAdd={onAdd} />
+						<ItemCount
+							stock={product.stock}
+							initial={1}
+							onAdd={onAdd(setCantidad)}
+						/>
 					</div>
 					<div className="cardBottom">
 						<span>{product.stock} Unidades Disponibles</span>
