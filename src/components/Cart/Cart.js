@@ -8,9 +8,9 @@ const Cart = () => {
 	if (cartList.length === 0) {
 		return (
 			<>
-				<h2>No hay productos en el carrito</h2>
+				<h1 className="noProductFind">No hay productos en el carrito</h1>
 				<Link to="/">
-					<button>Realizar compra</button>
+					<button className="buttonMakePurchase">Realizar compra</button>
 				</Link>
 			</>
 		);
