@@ -9,8 +9,11 @@ const CartWidget = () => {
 			<div className="navbar-cart">
 				<img className="navbar-cart-img" src={cart} alt="Cart Widget" />{' '}
 			</div>
-
-			<span className="total">{totalProducts() || ''}</span>
+			{totalProducts() === 0 ? (
+				false
+			) : (
+				<span className="total">{totalProducts()}</span>
+			)}
 		</div>
 	);
 };
