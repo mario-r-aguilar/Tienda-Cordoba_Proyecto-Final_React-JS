@@ -1,30 +1,49 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import ItemList from '../ItemList/ItemList';
-import { data } from '../../data/data';
+import {
+	getFirestore,
+	collection,
+	getDocs,
+	query,
+	where,
+} from 'firebase/firestore';
 import './ItemListContainer.css';
 
 const ItemListContainer = ({ greeting }) => {
 	const [productList, setProductList] = useState([]);
 	const { categoryId } = useParams();
-	const getProducts = new Promise((resolve, reject) => {
-		setTimeout(() => {
-			if (categoryId) {
-				const filterCategory = data.filter((item) => {
-					return item.category === categoryId;
-				});
-				resolve(filterCategory);
-			} else {
-				resolve(data);
-			}
-		}, 2000);
-	});
 
 	useEffect(() => {
-		getProducts.then((response) => {
-			setProductList(response);
-		});
-		// eslint-disable-next-line react-hooks/exhaustive-deps
+		const queryDataBase = getFirestore();
+		const queryCollection = collection(queryDataBase, 'products');
+		if (categoryId) {
+			const queryCollectionFilter = query(
+				queryCollection,
+				where('category', '==', 'categoryId')
+			);
+
+			getDocs(queryCollectionFilter).then((response) =>
+				setProductList(
+					response.docs.map((product) => ({
+						id: product.id,
+						...product.data(),
+					}))
+				)
+			);
+			//.catch((error) => console.log(error));
+		} else {
+			getDocs(queryCollection)
+				.then((response) =>
+					setProductList(
+						response.docs.map((product) => ({
+							id: product.id,
+							...product.data(),
+						}))
+					)
+				)
+				.catch((error) => console.log(error));
+		}
 	}, [categoryId]);
 
 	return (

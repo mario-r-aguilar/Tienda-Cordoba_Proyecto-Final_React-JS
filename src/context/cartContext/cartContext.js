@@ -22,8 +22,6 @@ const CartProvider = ({ children }) => {
 		}
 	};
 
-	console.log('Carrito', cartList);
-
 	const removeList = () => setCartList([]);
 
 	const isInCart = (id) => {
