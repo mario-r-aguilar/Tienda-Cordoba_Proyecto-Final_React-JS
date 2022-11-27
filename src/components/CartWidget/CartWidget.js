@@ -9,9 +9,7 @@ const CartWidget = () => {
 			<div className="navbar-cart">
 				<img className="navbar-cart-img" src={cart} alt="Cart Widget" />{' '}
 			</div>
-			{totalProducts() === 0 ? (
-				false
-			) : (
+			{totalProducts() !== 0 && (
 				<span className="total">{totalProducts()}</span>
 			)}
 		</div>

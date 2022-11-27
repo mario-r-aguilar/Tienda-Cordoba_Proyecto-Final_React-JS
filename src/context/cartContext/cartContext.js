@@ -30,8 +30,10 @@ const CartProvider = ({ children }) => {
 		return cartList.find((product) => product.id === id) ? true : false;
 	};
 
-	const deleteItem = (id) =>
-		setCartList(cartList.filter((product) => product.id !== id));
+	const deleteItem = (id) => {
+		const deletedItem = cartList.filter((product) => product.id !== id);
+		setCartList([...deletedItem]);
+	};
 
 	const totalPrice = () => {
 		return cartList.reduce(

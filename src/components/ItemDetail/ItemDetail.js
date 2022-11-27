@@ -35,24 +35,34 @@ const ItemDetail = ({ product }) => {
 			</div>
 
 			<div className="countProduct">
-				<div className="countProductCenter">
-					<div>
-						<ItemCount stock={product.stock} initial={1} onAdd={onAdd} />
-					</div>
-					<div className="unitsAvailable">
-						<span>{product.stock} Unidades Disponibles</span>
-					</div>
+				{cantidad > 0 ? (
 					<div>
 						<Link to="/cart">
 							<button className="buttonFinish">Terminar compra</button>
 						</Link>
-					</div>
-					<div>
 						<Link to="/">
-							<button className="buttonBack">Volver al Inicio</button>
+							<button className="buttonBack">Seguir comprando</button>
 						</Link>
 					</div>
-				</div>
+				) : (
+					<div className="countProductCenter">
+						<div>
+							<ItemCount
+								stock={product.stock}
+								initial={1}
+								onAdd={onAdd}
+							/>
+						</div>
+						<div className="unitsAvailable">
+							<span>{product.stock} Unidades Disponibles</span>
+						</div>
+						<div>
+							<Link to="/">
+								<button className="buttonBack">Volver al Inicio</button>
+							</Link>
+						</div>
+					</div>
+				)}
 			</div>
 		</div>
 	);
