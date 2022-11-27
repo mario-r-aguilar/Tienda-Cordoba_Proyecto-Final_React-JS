@@ -17,13 +17,13 @@ const Cart = () => {
 	}
 
 	return (
-		<>
+		<div className="cartContainer">
 			{cartList.map((product) => (
 				<ItemCart key={product.id} product={product} />
 			))}
 
-			<p>Precio Total: ${totalPrice()}</p>
-		</>
+			<h1 className="totalPrice">Precio Total: ${totalPrice()}</h1>
+		</div>
 	);
 };
 

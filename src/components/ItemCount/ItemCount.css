@@ -19,6 +19,9 @@
 	background-color: rgb(115, 194, 221);
 	box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.404);
 }
+.buttonCartContainerItemCount:hover {
+	border: 2px solid rgba(50, 135, 204, 0.877);
+}
 
 /* Botones */
 .buttonControlItemCount,
@@ -33,6 +36,15 @@
 	padding: 0 1.2rem;
 }
 
+.buttonControlItemCount:active,
+.buttonAddCartItemCount:active {
+	color: rgb(255, 255, 255);
+	font-weight: 500;
+}
+
+.buttonControlItemCount:hover {
+	border: 2px solid rgba(50, 135, 204, 0.877);
+}
 /* Contador */
 .messageItemCount {
 	margin: 0 1rem;

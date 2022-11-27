@@ -2,6 +2,7 @@
 	display: flex;
 	justify-content: space-evenly;
 }
+
 .productDetail {
 	display: flex;
 	flex-direction: column;
@@ -9,6 +10,7 @@
 	font-size: large;
 	margin-top: 8rem;
 }
+
 .unitsAvailable {
 	margin-top: 1rem;
 	margin-left: 12.5rem;
@@ -17,12 +19,15 @@
 	background-color: rgb(220, 237, 255);
 	border-radius: 0;
 }
+
 .textCard {
 	display: inline;
 }
+
 .priceCard {
 	color: rgb(7, 71, 155);
 }
+
 .countProductCenter {
 	margin: 12rem;
 	display: flex;
@@ -31,16 +36,30 @@
 }
 
 .buttonBack {
-	margin-top: 1rem;
-	padding: 0.5rem 1rem;
-	color: black;
-	border: 1px solid rgb(190, 190, 190);
+	margin-top: 15rem;
+	margin-right: 1rem;
+	font-size: 18px;
+	font-weight: 500;
+	padding: 0.5rem;
+	color: rgba(219, 255, 247, 0.87);
+	background-color: rgba(14, 83, 72, 0.856);
+	border: 1px solid rgba(14, 83, 72, 0.856);
 	border-radius: 8px;
-	background-color: rgb(190, 190, 190);
-	box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.404);
+	box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.74);
 }
+
+.buttonBack:hover {
+	border: 2px solid rgb(4, 27, 23);
+}
+
+.buttonBack:active {
+	border: 2px solid rgb(4, 27, 23);
+	font-weight: 700;
+}
+
 .buttonFinish {
-	margin-top: 1rem;
+	margin-top: 15rem;
+	margin-right: 1rem;
 	padding: 0.5rem 1rem;
 	font-size: 18px;
 	color: rgba(255, 255, 255, 0.836);
@@ -49,4 +68,13 @@
 	border-radius: 8px;
 	background-color: rgb(18, 89, 223);
 	box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.74);
+}
+
+.buttonFinish:hover {
+	border: 2px solid rgb(18, 37, 71);
+}
+
+.buttonFinish:active {
+	border: 2px solid rgb(18, 37, 71);
+	font-weight: 700;
 }

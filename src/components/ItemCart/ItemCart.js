@@ -11,11 +11,24 @@ const ItemCart = ({ product }) => {
 				alt={product.title}
 			/>
 			<div>
-				<p>Producto: {product.title}</p>
-				<p>Cantidad: {product.quantity}</p>
-				<p>Precio: {product.price}</p>
-				<p>Subtotal: ${product.quantity * product.price}</p>
-				<button onClick={() => deleteItem(product.id)}>Eliminar</button>
+				<p>
+					<b>Producto:</b> {product.title}
+				</p>
+				<p>
+					<b>Cantidad:</b> {product.quantity}
+				</p>
+				<p>
+					<b>Precio:</b> ${product.price}
+				</p>
+				<p>
+					<b>Subtotal:</b> ${product.quantity * product.price}
+				</p>
+				<button
+					className="buttonDelete"
+					onClick={() => deleteItem(product.id)}
+				>
+					Eliminar
+				</button>
 			</div>
 		</div>
 	);

@@ -37,11 +37,11 @@ const ItemDetail = ({ product }) => {
 			<div className="countProduct">
 				{cantidad > 0 ? (
 					<div>
+						<Link to="/">
+							<button className="buttonBack">Seguir Comprando</button>
+						</Link>
 						<Link to="/cart">
 							<button className="buttonFinish">Terminar compra</button>
-						</Link>
-						<Link to="/">
-							<button className="buttonBack">Seguir comprando</button>
 						</Link>
 					</div>
 				) : (
@@ -58,7 +58,7 @@ const ItemDetail = ({ product }) => {
 						</div>
 						<div>
 							<Link to="/">
-								<button className="buttonBack">Volver al Inicio</button>
+								<button className="buttonBack">Seguir Comprando</button>
 							</Link>
 						</div>
 					</div>
