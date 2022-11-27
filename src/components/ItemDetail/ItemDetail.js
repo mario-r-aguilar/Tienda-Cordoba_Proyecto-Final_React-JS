@@ -1,15 +1,18 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useCartContext } from '../../context/CartContext/CartContext';
 import ItemCount from '../ItemCount/ItemCount';
 import './ItemDetail.css';
 
 const ItemDetail = ({ product }) => {
-	//Función Add Cart
+	// eslint-disable-next-line no-unused-vars
 	const [cantidad, setCantidad] = useState(0);
+	const { addToCart } = useCartContext();
+
 	const onAdd = (count) => {
 		setCantidad(count);
+		addToCart(product, count);
 	};
-	console.log(cantidad);
 
 	return (
 		<div className="productDetailContainer">
