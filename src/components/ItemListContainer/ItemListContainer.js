@@ -20,7 +20,7 @@ const ItemListContainer = ({ greeting }) => {
 		if (categoryId) {
 			const queryCollectionFilter = query(
 				queryCollection,
-				where('category', '==', 'categoryId')
+				where('category', '==', categoryId)
 			);
 
 			getDocs(queryCollectionFilter).then((response) =>
