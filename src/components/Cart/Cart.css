@@ -13,13 +13,15 @@
 	background-color: rgb(20, 90, 194);
 	border: 1px solid rgb(20, 90, 194);
 	padding: 0.5rem;
-	border-radius: 8px;
 	color: rgba(250, 235, 215, 0.952);
 	width: 25%;
 	text-align: center;
+	margin-left: 1rem;
+	font-size: 20px;
 }
 
-.buttonMakePurchase {
+.buttonMakePurchase,
+.buttonBuy {
 	margin-top: 1rem;
 	margin-left: 1rem;
 	font-size: 18px;
@@ -30,4 +32,15 @@
 	border: 1px solid rgba(14, 83, 72, 0.856);
 	border-radius: 8px;
 	box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.74);
+}
+
+.buttonMakePurchase:hover,
+.buttonBuy:hover {
+	border: 2px solid rgba(35, 204, 176, 0.856);
+}
+
+.buttonMakePurchase:active,
+.buttonBuy:active {
+	border: 2px solid rgba(35, 204, 176, 0.856);
+	font-weight: 700;
 }

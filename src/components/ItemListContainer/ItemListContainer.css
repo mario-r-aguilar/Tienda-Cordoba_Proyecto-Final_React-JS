@@ -1,3 +1,6 @@
+body {
+	background-color: rgb(147, 172, 218);
+}
 .containerMsgAndCards {
 	display: flex;
 	flex-direction: column;
