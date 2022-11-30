@@ -1,16 +1,22 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useCartContext } from '../../context/CartContext/CartContext';
 import ItemCart from '../ItemCart/ItemCart';
-import { addDoc, collection, getFirestore } from 'firebase/firestore';
-
+import {
+	addDoc,
+	collection,
+	getFirestore,
+	serverTimestamp,
+} from 'firebase/firestore';
+import Swal from 'sweetalert2';
 import './Cart.css';
 
 const Cart = () => {
 	const { cartList, totalPrice } = useCartContext();
+	const navigate = useNavigate();
 
 	const order = {
 		buyer: {
-			user: 'Luciano_Lopez',
+			user: 'Luciano Lopez',
 			email: 'lucianolopez@gmail.com',
 			phone: '3515111111',
 			address: 'San Martin 1024',
@@ -22,6 +28,7 @@ const Cart = () => {
 			quantity: product.quantity,
 		})),
 		total: totalPrice(),
+		date: serverTimestamp(),
 	};
 
 	const buyFinish = () => {
@@ -30,7 +37,14 @@ const Cart = () => {
 		addDoc(orderBuyCollection, order)
 			.then(({ id }) => {
 				console.log(id);
-				alert(`Su orden de compra ha sido generada con el nº ${id}`);
+				Swal.fire({
+					position: 'top-end',
+					icon: 'success',
+					title: `Muchas Gracias por su Compra! \n 
+					Su número de orden es:  ${id}`,
+					showConfirmButton: true,
+				});
+				navigate('/');
 			})
 			.catch((error) => console.log(error));
 	};
