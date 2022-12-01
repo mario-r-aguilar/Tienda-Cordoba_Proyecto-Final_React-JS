@@ -11,7 +11,7 @@ import Swal from 'sweetalert2';
 import './Cart.css';
 
 const Cart = () => {
-	const { cartList, totalPrice } = useCartContext();
+	const { cartList, totalPrice, removeList } = useCartContext();
 	const navigate = useNavigate();
 
 	const order = {
@@ -40,10 +40,11 @@ const Cart = () => {
 				Swal.fire({
 					position: 'top-end',
 					icon: 'success',
-					title: `Muchas Gracias por su Compra! \n 
-					Su número de orden es:  ${id}`,
+					title: `Muchas Gracias por su Compra!`,
+					text: `Su número de orden es:  ${id}`,
 					showConfirmButton: true,
 				});
+				removeList();
 				navigate('/');
 			})
 			.catch((error) => console.log(error));

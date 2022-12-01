@@ -23,15 +23,16 @@ const ItemListContainer = ({ greeting }) => {
 				where('category', '==', categoryId)
 			);
 
-			getDocs(queryCollectionFilter).then((response) =>
-				setProductList(
-					response.docs.map((product) => ({
-						id: product.id,
-						...product.data(),
-					}))
+			getDocs(queryCollectionFilter)
+				.then((response) =>
+					setProductList(
+						response.docs.map((product) => ({
+							id: product.id,
+							...product.data(),
+						}))
+					)
 				)
-			);
-			//.catch((error) => console.log(error));
+				.catch((error) => console.log(error));
 		} else {
 			getDocs(queryCollection)
 				.then((response) =>
