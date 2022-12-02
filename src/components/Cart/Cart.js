@@ -6,20 +6,36 @@ import {
 	collection,
 	getFirestore,
 	serverTimestamp,
+	doc,
+	updateDoc,
 } from 'firebase/firestore';
 import Swal from 'sweetalert2';
+import { useState } from 'react';
 import './Cart.css';
 
 const Cart = () => {
 	const { cartList, totalPrice, removeList } = useCartContext();
 	const navigate = useNavigate();
+	const [formValues, setFormValues] = useState({
+		user: '',
+		email: '',
+		phone: '',
+		address: '',
+	});
+
+	const inputChange = (e) => {
+		setFormValues({
+			...formValues,
+			[e.target.name]: e.target.value,
+		});
+	};
 
 	const order = {
 		buyer: {
-			user: 'Luciano Lopez',
-			email: 'lucianolopez@gmail.com',
-			phone: '3515111111',
-			address: 'San Martin 1024',
+			user: formValues.user,
+			email: formValues.email,
+			phone: formValues.phone,
+			address: formValues.address,
 		},
 		item: cartList.map((product) => ({
 			id: product.id,
@@ -47,6 +63,12 @@ const Cart = () => {
 				removeList();
 				navigate('/');
 			})
+			.then(() => {
+				cartList.forEach((product) => {
+					const query = doc(buyDb, 'products', product.id);
+					updateDoc(query, { stock: product.stock - product.quantity });
+				});
+			})
 			.catch((error) => console.log(error));
 	};
 
@@ -70,6 +92,43 @@ const Cart = () => {
 			</div>
 			<div>
 				<h1 className="totalPrice">Precio Total: ${totalPrice()}</h1>
+
+				<h2 className="formTittle">Por favor complete sus datos:</h2>
+				<div className="formBuy">
+					<input
+						className="fieldInput"
+						name="user"
+						type="text"
+						placeHolder="Nombre Completo"
+						value={formValues.user}
+						onChange={inputChange}
+					/>
+					<input
+						className="fieldInput"
+						name="email"
+						type="text"
+						placeHolder="E-mail"
+						value={formValues.email}
+						onChange={inputChange}
+					/>
+					<input
+						className="fieldInput"
+						name="phone"
+						type="text"
+						placeHolder="Teléfono"
+						value={formValues.phone}
+						onChange={inputChange}
+					/>
+					<input
+						className="fieldInput"
+						name="address"
+						type="text"
+						placeHolder="Dirección"
+						value={formValues.address}
+						onChange={inputChange}
+					/>
+				</div>
+
 				<button className="buttonBuy" onClick={buyFinish}>
 					Comprar
 				</button>

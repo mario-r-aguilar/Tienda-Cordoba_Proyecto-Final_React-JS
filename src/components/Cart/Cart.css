@@ -44,3 +44,29 @@
 	border: 2px solid rgba(35, 204, 176, 0.856);
 	font-weight: 700;
 }
+
+.formTittle {
+	margin-top: 2rem;
+	margin-left: 1rem;
+}
+
+.formBuy {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+.fieldInput {
+	margin-left: 1rem;
+	margin-bottom: 2rem;
+	border-radius: 4px;
+	height: 1.5rem;
+}
+
+.fieldInput:focus-visible {
+	background-color: rgba(0, 255, 213, 0.253);
+}
+
+::placeholder {
+	color: rgba(0, 0, 0, 0.74);
+}
