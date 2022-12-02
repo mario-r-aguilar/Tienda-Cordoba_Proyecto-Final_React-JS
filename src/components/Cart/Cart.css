@@ -64,7 +64,7 @@
 }
 
 .fieldInput:focus-visible {
-	background-color: rgba(0, 255, 213, 0.253);
+	background-color: rgba(0, 255, 213, 0.171);
 }
 
 ::placeholder {
