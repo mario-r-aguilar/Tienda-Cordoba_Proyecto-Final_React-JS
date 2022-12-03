@@ -7,9 +7,9 @@ Se trata de una tienda online de venta de productos para bebés.
 
 Trabaje con las siguientes dependencias:
 
-React Router Dom para el ruteo de las secciones.
-Sweet Alert para mostrar avisos al usuario.
-Firebase (Firestore) como base de datos de productos y creación de ordenes de compra.
+-  React Router Dom para el ruteo de las secciones.
+-  Sweet Alert para mostrar avisos al usuario.
+-  Firebase (Firestore) como base de datos de productos y creación de ordenes de compra.
 
 ### Componentes
 
