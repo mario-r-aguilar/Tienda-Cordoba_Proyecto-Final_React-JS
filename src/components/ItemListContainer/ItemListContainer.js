@@ -8,11 +8,13 @@ import {
 	query,
 	where,
 } from 'firebase/firestore';
+import Spinner from '../Spinner/Spinner';
 import './ItemListContainer.css';
 
 const ItemListContainer = ({ greeting }) => {
 	const [productList, setProductList] = useState([]);
 	const { categoryId } = useParams();
+	const [loading, setLoading] = useState(true);
 
 	useEffect(() => {
 		const queryDataBase = getFirestore();
@@ -32,6 +34,7 @@ const ItemListContainer = ({ greeting }) => {
 						}))
 					)
 				)
+				.then(() => setLoading(false))
 				.catch((error) => console.log(error));
 		} else {
 			getDocs(queryCollection)
@@ -43,17 +46,28 @@ const ItemListContainer = ({ greeting }) => {
 						}))
 					)
 				)
+				.then(() => setLoading(false))
 				.catch((error) => console.log(error));
 		}
 	}, [categoryId]);
 
 	return (
-		<div className="containerMsgAndCards">
-			<div className="greeting-container">
-				<h2 className="greeting-message">{greeting}</h2>
-			</div>
-			<ItemList productList={productList} />
-		</div>
+		<>
+			{loading ? (
+				<div className="spinnerContainer">
+					<div className="spinner">
+						<Spinner />
+					</div>
+				</div>
+			) : (
+				<div className="containerMsgAndCards">
+					<div className="greeting-container">
+						<h2 className="greeting-message">{greeting}</h2>
+					</div>
+					<ItemList productList={productList} />
+				</div>
+			)}
+		</>
 	);
 };
 
