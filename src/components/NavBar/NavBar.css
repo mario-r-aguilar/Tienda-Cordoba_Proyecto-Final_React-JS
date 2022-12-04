@@ -6,6 +6,13 @@
 	border-bottom: 2px solid rgb(5, 16, 48);
 }
 
+@media (max-width: 1055px) {
+	.navbar-container {
+		flex-wrap: wrap;
+		height: auto;
+	}
+}
+
 .navbar-titulo {
 	margin-left: 1rem;
 	padding-bottom: 2rem;
@@ -30,4 +37,11 @@
 	text-decoration: none;
 	font-size: 1.2rem;
 	color: rgb(241, 237, 231);
+}
+
+@media (max-width: 1055px) {
+	.navbar-list {
+		display: block;
+		text-align: center;
+	}
 }

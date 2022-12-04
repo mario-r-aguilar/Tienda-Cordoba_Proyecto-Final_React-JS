@@ -26,6 +26,12 @@ body {
 	margin-bottom: 1.5rem;
 }
 
+@media (max-width: 1055px) {
+	.greeting-container {
+		display: none;
+	}
+}
+
 .spinnerContainer {
 	display: flex;
 	justify-content: space-around;
