@@ -21,7 +21,7 @@ El componente Cart, se ubica como tercero en importancia ya que se encarga de re
 
 En la Home, el usuario contará con todos los productos disponibles incluyendo foto, precio y stock.
 Cada card cuenta con un botón para ver los detalles de cada producto. Al hacer clic podrá ampliar la descripción y agregar la cantidad del producto que desee. Luego de hacerlo puede finalizar el pedido e ir al carrito para completar la compra o bien volver al listado completo de productos y continuar comprando.
-En el carrito podrá ver todos los elementos agregados, el costo total de cada produto y el total de la compra. Luego de completar sus datos y finalizar la compra, obtendrá un código único como comprobante de la operación y se actualizará el stock de los productos. Asimismo en el widget del carrito podrá ver todo el tiempo la cantidad total de productos adquiridos.
+En el carrito podrá ver todos los elementos agregados, el costo total de cada produto y el total de la compra e incluso eliminar elementos que no llevaras. Luego de completar con los datos del cliente y finalizar la compra, obtendrá un código único como comprobante de la operación y se actualizará el stock de los productos. Asimismo en el widget del carrito podrá ver todo el tiempo la cantidad total de productos adquiridos.
 
 ![alt text](./public/images/readme.gif)
 
