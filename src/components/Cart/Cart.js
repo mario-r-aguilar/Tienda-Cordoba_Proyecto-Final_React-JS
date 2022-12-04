@@ -48,28 +48,41 @@ const Cart = () => {
 	};
 
 	const buyFinish = () => {
-		const buyDb = getFirestore();
-		const orderBuyCollection = collection(buyDb, 'orders');
-		addDoc(orderBuyCollection, order)
-			.then(({ id }) => {
-				console.log(id);
-				Swal.fire({
-					position: 'top-end',
-					icon: 'success',
-					title: `Muchas Gracias por su Compra!`,
-					text: `Su número de orden es:  ${id}`,
-					showConfirmButton: true,
-				});
-				removeList();
-				navigate('/');
-			})
-			.then(() => {
-				cartList.forEach((product) => {
-					const query = doc(buyDb, 'products', product.id);
-					updateDoc(query, { stock: product.stock - product.quantity });
-				});
-			})
-			.catch((error) => console.log(error));
+		if (
+			formValues.user !== '' &&
+			formValues.email !== '' &&
+			formValues.phone !== '' &&
+			formValues.address !== ''
+		) {
+			const buyDb = getFirestore();
+			const orderBuyCollection = collection(buyDb, 'orders');
+			addDoc(orderBuyCollection, order)
+				.then(({ id }) => {
+					Swal.fire({
+						position: 'top-end',
+						icon: 'success',
+						title: `Muchas Gracias por su Compra!`,
+						text: `Su número de orden es:  ${id}`,
+						showConfirmButton: true,
+					});
+					removeList();
+					navigate('/');
+				})
+				.then(() => {
+					cartList.forEach((product) => {
+						const query = doc(buyDb, 'products', product.id);
+						updateDoc(query, { stock: product.stock - product.quantity });
+					});
+				})
+				.catch((error) => console.log(error));
+		} else {
+			Swal.fire({
+				position: 'top-end',
+				icon: 'error',
+				title: `Por favor complete todos los campos`,
+				showConfirmButton: true,
+			});
+		}
 	};
 
 	if (cartList.length === 0) {
@@ -106,7 +119,7 @@ const Cart = () => {
 					<input
 						className="fieldInput"
 						name="email"
-						type="text"
+						type="email"
 						placeHolder="E-mail"
 						value={formValues.email}
 						onChange={inputChange}
@@ -114,7 +127,7 @@ const Cart = () => {
 					<input
 						className="fieldInput"
 						name="phone"
-						type="text"
+						type="tel"
 						placeHolder="Teléfono"
 						value={formValues.phone}
 						onChange={inputChange}
