@@ -25,6 +25,10 @@ En el carrito podrá ver todos los elementos agregados, el costo total de cada p
 
 ![alt text](./public/images/readme.gif)
 
+### Link
+
+https://tienda-cordoba-react-js.vercel.app/
+
 ### Autor
 
 Mario Aguilar
